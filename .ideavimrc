@@ -1,0 +1,5 @@
+Plug 'preservim/nerdtree'
+set NERDTree
+
+let g:NERDTreeMapPreview="o"
+let g:NERDTreeMapActivateNode="go"
