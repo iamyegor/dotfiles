@@ -1,5 +1,16 @@
 Plug 'preservim/nerdtree'
+
 set NERDTree
 
-let g:NERDTreeMapPreview="o"
-let g:NERDTreeMapActivateNode="go"
+let g:NERDTreeMapActivateNode = 'go'
+let g:NERDTreeMapPreview = 'o'
+
+noremap <C-d> 10<C-e>
+noremap <C-u> 10<C-y>
+
+set visualbell
+set noerrorbells
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+set ideajoin
