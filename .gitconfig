@@ -1,0 +1,20 @@
+[user]
+	name = yegor
+	email = astery227@gmail.com
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[core]
+    editor = nvim
+[alias]
+    up = !git -C $(git rev-parse --show-toplevel) add . && git commit
+    up-empty = !git -C $(git rev-parse --show-toplevel) add . && git commit --allow-empty
+    co = !git checkout
+    newbr = !git checkout -b
+    amend = !/home/yegor/Custom_git_commands/git-amend.sh
+    aa = !git add . 
+    find = !git log --oneline --all --gregit edit-commit 9f6079cp
+    edit-commit = "!f() { git rebase -i $1^; }; f"
+    noconfl = !git add . && git rebase --continue
+
