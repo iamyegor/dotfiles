@@ -4,8 +4,10 @@
 function check_conflicts() {
     # Using git diff to list unmerged files
     if git diff --name-only --diff-filter=U | grep -q '.*'; then
+        echo "True"
         return 1  # There are unmerged files
     else
+        echo "False"
         return 0  # No unmerged files
     fi
 }
