@@ -21,9 +21,9 @@ if [ -d ".git/rebase-merge" ] || [ -d ".git/rebase-apply" ]; then
     # Only prompt if there are unresolved conflicts
     if [ $conflict_status -eq 1 ]; then
         echo "Merge conflicts detected during rebase."
-        read -p "Do you want to proceed with amending? (y/n): " yn
+        read -p "Do you want to proceed with amending? (yes/n): " yn
         case $yn in
-            [Yy]* ) ;;
+            [Yy][Ee][Ss] ) ;;
             [Nn]* ) echo "Amend cancelled."; exit 1;;
             * ) echo "Please answer yes or no."; exit 1;;
         esac

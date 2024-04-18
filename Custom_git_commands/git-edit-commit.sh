@@ -8,9 +8,9 @@ branch_name=$(git symbolic-ref --short HEAD 2>/dev/null)
 
 if [ -z "$branch_name" ]; then
     echo 'WARNING: You are in detached HEAD mode!'
-    read -p 'Do you want to proceed with rebase? (y/n): ' yn
+    read -p 'Do you want to proceed with rebase? (yes/n): ' yn
     case $yn in
-        [Yy]* ) ;;
+        [Yy][Ee][Ss] ) ;;
         [Nn]* ) echo 'Rebase cancelled.'; exit 1;;
         * ) echo 'Invalid input.'; exit 1;;
     esac
