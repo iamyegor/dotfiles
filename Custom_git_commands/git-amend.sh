@@ -2,17 +2,22 @@
 
 # Function to check for unmerged files
 function check_conflicts() {
-    if git ls-files --unmerged | grep -q '^[^ ]'; then
-        return 1
+    # Using git diff to list unmerged files
+    if git diff --name-only --diff-filter=U | grep -q '.*'; then
+        return 1  # There are unmerged files
     else
-        return 0
+        return 0  # No unmerged files
     fi
 }
 
 # Check if rebasing
 if [ -d ".git/rebase-merge" ] || [ -d ".git/rebase-apply" ]; then
-    # Check for merge conflicts
-    if check_conflicts; then
+    # Check for merge conflicts and store the result
+    check_conflicts
+    conflict_status=$?
+
+    # Only prompt if there are unresolved conflicts
+    if [ $conflict_status -eq 1 ]; then
         echo "Merge conflicts detected during rebase."
         read -p "Do you want to proceed with amending? (y/n): " yn
         case $yn in
