@@ -16,6 +16,11 @@ if [ -z "$branch_name" ]; then
     esac
 fi
 
-# Proceed with the interactive rebase
-git rebase -i ${commit_hash}^
+# Check if the user entered 'root' to trigger rebase from the root
+if [ "$commit_hash" = "root" ]; then
+    git rebase --root -i
+else
+    # Proceed with the interactive rebase for the specified commit
+    git rebase -i ${commit_hash}^
+fi 
 
