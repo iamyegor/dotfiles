@@ -26,7 +26,7 @@ chsh -s $(which zsh)
 sudo apt install -y curl
 
 # Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 
 # Verify Oh My Zsh installation
 if [ -d "$HOME/.oh-my-zsh" ]; then
