@@ -12,9 +12,9 @@
     up-empty = !git -C $(git rev-parse --show-toplevel) add . && git commit --allow-empty
     co = !git checkout
     newbr = !git checkout -b
-    amend = !/home/yegor/Custom_git_commands/git-amend.sh
+    amend = !~/git-commands/git-amend.sh
     aa = !git add . 
     find = !git log --oneline --all --gregit edit-commit 9f6079cp
-    edit-commit = !~/Custom_git_commands/git-edit-commit.sh
+    edit-commit = !~/git-commands/git-edit-commit.sh
     noconfl = !git add . && git rebase --continue
 
