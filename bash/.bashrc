@@ -144,4 +144,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+set -o vi
+
 bind "set completion-ignore-case on"
