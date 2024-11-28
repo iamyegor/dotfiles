@@ -1,0 +1,36 @@
+import = [
+    "~/.config/alacritty/themes/themes/onedark.toml"
+]
+
+[colors.primary]
+background = "#171717" 
+
+[font]
+size = 13
+
+[font.normal]
+family = "JetBrains Mono Nerd Font"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Control"
+
+[window.dimensions]
+columns = 120
+lines = 30
+
+[window]
+opacity = 0.85
+padding = { x = 5, y = 10 }
+dynamic_padding = true
