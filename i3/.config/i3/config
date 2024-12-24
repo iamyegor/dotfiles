@@ -265,3 +265,7 @@ bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow)
 
 # Selected area screenshot
 bindsym Shift+Print exec --no-startup-id maim --select ~/Pictures/screenshots/$(date +%s).png
+
+# Disable screen saver
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
